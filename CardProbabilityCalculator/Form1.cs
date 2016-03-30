@@ -16,5 +16,12 @@ namespace CardProbabilityCalculator
         {
             InitializeComponent();
         }
+
+        private void LoadButton_Click(object sender, EventArgs e)
+        {
+            var fileLoader = new FileLoader();
+
+            fileLoader.OpenFile();
+        }
     }
 }
