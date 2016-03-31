@@ -28,7 +28,6 @@ namespace CardProbabilityCalculator
 
         private void ConvertToDeck(FileInfo file)
         {
-            //TODO: Use Regex
         }
 
         private void ReadFile(FileInfo file)
