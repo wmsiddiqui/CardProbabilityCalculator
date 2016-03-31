@@ -20,18 +20,29 @@ namespace CardProbabilityCalculator
         public void AddSearchableCard(Card searchableCard)
         {
             if(_searchableCards == null)
-            {
                 _searchableCards = new List<Card>();
-            }
+
             if(searchableCard.searchCards == null)
-            {
                 searchableCard.searchCards = new List<Card>();
-            }
+            
             if(!searchableCard.searchCards.Contains(this))
-            {
                 searchableCard.searchCards.Add(this);
-            }
+            
             _searchableCards.Add(searchableCard);
+        }
+
+        public void AddSearcher(Card searcherCard)
+        {
+            if(searchCards == null)
+                searchCards = new List<Card>();
+            
+            if(searcherCard._searchableCards == null)
+                searcherCard._searchableCards = new List<Card>();
+            
+            if(!searcherCard._searchableCards.Contains(this))
+                searcherCard._searchableCards.Add(this);
+
+            searchCards.Add(searcherCard);
         }
 
         public bool CanSearch(Card searchedCard)
