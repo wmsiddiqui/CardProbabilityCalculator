@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace CardProbabilityCalculator
 {
-    class Card
+    internal class Card
     {
         private string _cardName;
         protected List<Card> _searchableCards;

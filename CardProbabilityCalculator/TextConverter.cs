@@ -46,10 +46,12 @@ namespace CardProbabilityCalculator
         public string CreateCardFromLine(string line)
         {
             //TODO: Fix Regex with multiple capture groups.
-            string pattern = @"((?i)x(?<Quantity>\d+))|(\[[(?<Quantity>\d+)]\])";
+            string pattern = @".*(?<Quantity>\d+)\S*";
             var matches = Regex.Match(line, pattern);
 
             return matches.Groups["Quantity"].Value;
         }
+
+        
     }
 }

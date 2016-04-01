@@ -3,11 +3,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{52104788-2015-41B1-8310-8865AB506D4F}</ProjectGuid>
+    <ProjectGuid>{328BBFF3-A513-4569-8ED2-64ED721E2275}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>RegexTests</RootNamespace>
-    <AssemblyName>RegexTests</AssemblyName>
+    <RootNamespace>ConstructionTests</RootNamespace>
+    <AssemblyName>ConstructionTests</AssemblyName>
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <ProjectTypeGuids>{3AC096D0-A1C2-E12C-1390-A8335801FDAB};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
@@ -45,15 +45,13 @@
     </When>
     <Otherwise>
       <ItemGroup>
-        <Reference Include="Microsoft.VisualStudio.QualityTools.UnitTestFramework">
-          <Private>False</Private>
-        </Reference>
+        <Reference Include="Microsoft.VisualStudio.QualityTools.UnitTestFramework" />
       </ItemGroup>
     </Otherwise>
   </Choose>
   <ItemGroup>
+    <Compile Include="CardParserTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="UnitTest1.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\CardProbabilityCalculator\CardProbabilityCalculator.csproj">

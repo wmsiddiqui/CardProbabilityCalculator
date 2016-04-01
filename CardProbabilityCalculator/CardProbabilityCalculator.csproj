@@ -47,6 +47,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Card.cs" />
+    <Compile Include="CardParser.cs" />
     <Compile Include="FileLoader.cs" />
     <Compile Include="MainWindow.cs">
       <SubType>Form</SubType>
