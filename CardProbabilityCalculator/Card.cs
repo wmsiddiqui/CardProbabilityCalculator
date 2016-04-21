@@ -63,4 +63,14 @@ namespace CardProbabilityCalculator
         }
 
     }
+    class CardSet
+    {
+        public readonly int Quantity;
+        public readonly string CardName;
+        public CardSet(string cardName, int quantity)
+        {
+            CardName = cardName;
+            Quantity = quantity;
+        }
+    }
 }

@@ -19,28 +19,37 @@ namespace CardProbabilityCalculator
             ConvertToDeck(file);
         }
 
-        public TextConverter()
-        {
-
-        }
-
         private List<Card> Deck = new List<Card>();
 
         private void ConvertToDeck(FileInfo file)
         {
+            //TODO: Read file.
+            var cardListFromText = new List<Card>();
+            using (var reader = new StreamReader(file.FullName))
+            {
+                var line = string.Empty;
+                while((line = reader.ReadLine()) != null)
+                {
+
+                } 
+            }
+
+
         }
 
-        private void ReadFile(FileInfo file)
+        private IEnumerable<CardSet> ReadFile(FileInfo file)
         {
-            //CreateCardFromLine();
+            List<CardSet> Cards = new List<CardSet>();
             using (StreamReader reader = new StreamReader(file.FullName))
             {
                 var line = string.Empty;
+                var parser = new CardParser();
                 while (line != null)
                 {
-
+                    Cards.Add(parser.ConvertLineToCardSet(line));
                 }
             }
+            return Cards;
         }
 
         public string CreateCardFromLine(string line)

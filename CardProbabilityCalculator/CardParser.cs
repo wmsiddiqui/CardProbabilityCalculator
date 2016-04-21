@@ -17,20 +17,14 @@ namespace CardProbabilityCalculator
 
         }
 
-        public List<Card> ConvertLineToCardSet(string line)
+        public CardSet ConvertLineToCardSet(string line)
         {
             var quantity = GetCardQuantityFromLine(line);
             var cardName = GetCardNameFromLine(line);
 
-            List<Card> playSet = new List<Card>();
-
-            for (int i = 0; i < quantity; i++)
-            {
-                Card card = new Card(cardName);
-                playSet.Add(card);
-            }
-
-            if (playSet.Count == 0)
+            var playSet = new CardSet(cardName, quantity);
+           
+            if (playSet.Quantity == 0)
                 throw new PlaySetEmptyException();
 
             return playSet;
@@ -52,6 +46,10 @@ namespace CardProbabilityCalculator
 
         private string GetCardNameFromLine(string line)
         {
+            //A limitation to this regex is the use of "X" following a 
+            //quantity. If the name is "X NAME", then the "X" cannot have a quantity
+            //before it. Therefore the format "3 x CardName" will be accepted as
+            //quantity 3 of "X CardName"
             string pattern = @"^(\D*\d+\S* )?(?<Name>.*)";
 
             var match = Regex.Match(line, pattern);
